@@ -1,1 +1,4 @@
-<h1>Header component works!</h1>
+<h1>
+    {{ time }}
+    {{ title | customPipe: [{id: 1}, {id:2}] }} 
+</h1>
