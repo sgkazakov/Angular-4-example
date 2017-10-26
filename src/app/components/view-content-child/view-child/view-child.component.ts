@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, ContentChild, AfterContentInit, AfterViewInit } from "@angular/core";
 import { ContentChildComponent } from "../content-child/content-child.component";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "view-child",
@@ -17,5 +18,4 @@ export class ViewChildComponent {
         this.contentChild.text = "Changed content child";
         this.contentChild.changeConentColor = !this.contentChild.changeConentColor;
     }
-
 }

@@ -3,10 +3,10 @@ import { ContentChildComponent } from "../content-child/content-child.component"
 import { ViewChildComponent } from "../view-child/view-child.component";
 
 @Component({
-    selector: "combine-child",
-    templateUrl: "combine-child.component.html"
+    selector: "parent",
+    templateUrl: "parent.component.html"
 })
-export class CombineChildComponent implements AfterContentInit, AfterViewInit {
+export class ParentComponent implements AfterContentInit, AfterViewInit {
 
     @ViewChild(ViewChildComponent)
     private viewChild: ViewChildComponent;
@@ -33,7 +33,7 @@ export class CombineChildComponent implements AfterContentInit, AfterViewInit {
         
         // you can't change the value in after view init
         // you can if you call change detection
-        // this.divChildren.forEach((a, index) => a.text = index.toString())
-        // this.viewChild.viewChildColor = false;
+            // this.divChildren.forEach((a, index) => a.text = index.toString())
+            // this.viewChild.viewChildColor = false;
     }
 }

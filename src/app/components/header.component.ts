@@ -6,8 +6,12 @@ import { CustomPipePipe } from '../pipes/custom-pipe.pipe';
 @Component({
 
     selector: "header-component",
-    templateUrl: "./header.component.html",
-    styleUrls: ["./header.component.css"],
+    template: `
+    <h1>
+        {{ time }}
+        {{ title | customPipe: [{id: 1}, {id:2}] }} 
+    </h1>`,
+
     providers: [
         DatePipe,
     ]
