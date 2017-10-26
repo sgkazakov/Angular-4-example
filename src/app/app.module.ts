@@ -15,16 +15,12 @@ import { MainAppComponent } from './main-app/main-app.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    CustomPipePipe,
-    ViewChildComponent,
-    ContentChildComponent,
-    ParentComponent
+    CustomPipePipe
   ],
   imports: [
     BrowserModule,
     MainAppModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
