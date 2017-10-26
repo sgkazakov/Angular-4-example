@@ -7,20 +7,23 @@ import { ResolverComponent } from "../components/resolvers-guards/resolvers.comp
 import { ContentChildComponent } from '../components/view-content-child/content-child/content-child.component';
 import { ViewChildComponent } from '../components/view-content-child/view-child/view-child.component';
 import { IdResolver } from '../components/resolvers-guards/resolvers/id-resolver';
+import { PreloadedService } from '../preloaded-service';
 
-const ROUTES: Routes = [{
-    path: "child", component: ParentComponent
-},
-{
-    path: "resolver/:id", component: ResolverComponent,
-    resolve: {
-        id: IdResolver
-    }
-}]
+const ROUTES: Routes = [
+    { path: '', component: MainAppComponent },
+    {
+        path: "child", component: ParentComponent
+    },
+    {
+        path: "resolver/:id", component: ResolverComponent,
+        resolve: {
+            id: IdResolver
+        }
+    }]
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forRoot(ROUTES)],
+        RouterModule.forChild(ROUTES)],
     declarations: [MainAppComponent,
         ParentComponent,
         ResolverComponent,
