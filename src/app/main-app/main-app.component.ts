@@ -8,7 +8,22 @@ import { Subject } from "rxjs/Subject";
 
 @Component({
     selector: "main-app",
-    templateUrl: "main-app.component.html",
+    template: `
+    <h1> App </h1>
+    <nav>
+        <a routerLink="child" routerLinkActive="active">
+            View Children
+        </a>
+        <a routerLink="resolver/5" routerLinkActive="active">
+            Resolvers
+        </a>
+        <a routerLink="validation" routerLinkActive="active">
+            Validation
+        </a>
+    </nav>
+    <router-outlet></router-outlet>
+    `,
+    styles: ["a {margin: 5px}"]
 })
 export class MainAppComponent {
 
