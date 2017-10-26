@@ -21,18 +21,11 @@ import { MainAppComponent } from './main-app/main-app.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    CustomPipePipe,
-    ViewChildComponent,
-    ContentChildComponent,
-
-    ValidationRecipeComponent,
-    ParentComponent
+    CustomPipePipe
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, MainAppModule,
     ReactiveFormsModule, FormsModule
-
-    
   ],
 
   providers: [HelperService],
