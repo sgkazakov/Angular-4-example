@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router"
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header.component';
+import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 import { ViewChildComponent } from './components/view-content-child/view-child/view-child.component';
 import { ContentChildComponent } from './components/view-content-child/content-child/content-child.component';
 import { ParentComponent } from './components/view-content-child/parent/parent.component';
@@ -14,6 +15,7 @@ import { MainAppComponent } from './main-app/main-app.component';
   declarations: [
     AppComponent,
     HeaderComponent,
+    CustomPipePipe,
     ViewChildComponent,
     ContentChildComponent,
     ParentComponent
