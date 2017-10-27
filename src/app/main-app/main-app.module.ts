@@ -9,8 +9,13 @@ import { ResolverComponent } from "../components/resolvers-guards/resolvers.comp
 import { ContentChildComponent } from '../components/view-content-child/content-child/content-child.component';
 import { ViewChildComponent } from '../components/view-content-child/view-child/view-child.component';
 import { IdResolver } from '../components/resolvers-guards/resolvers/id-resolver';
-import { HelperService } from "../components/validation-recipe/helper-service";
-import { ValidationRecipeComponent } from "../components/validation-recipe/validation-recipe.component";
+import { HelperService } from "../components/validation/helper-service";
+import { ValidationComponent } from "../components/validation/validation.component";
+import { PipeComponent } from "../components/pipes/pipe.component";
+import { CustomPipe } from "../components/pipes/custom-pipe.pipe";
+import { HostComponent } from "../components/custom-form/host.component";
+import { CustomFormComponent } from "../components/custom-form/custom-form.component";
+
 
 const ROUTES: Routes = [
     { path: '', component: MainAppComponent },
@@ -24,7 +29,14 @@ const ROUTES: Routes = [
         }
     },
     {
-        path: "validation", component: ValidationRecipeComponent
+        path: "validation", component: ValidationComponent
+    },
+    {
+        path: "pipes", component: PipeComponent
+    }, 
+    {
+        path: "host", component: HostComponent
+            
     }]
 @NgModule({
     imports: [
@@ -37,7 +49,11 @@ const ROUTES: Routes = [
         ResolverComponent,
         ViewChildComponent,
         ContentChildComponent,
-        ValidationRecipeComponent
+        ValidationComponent,
+        PipeComponent,
+        CustomPipe,
+        CustomFormComponent,
+        HostComponent
     ],
     providers: [
         IdResolver,

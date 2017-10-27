@@ -1,25 +1,29 @@
 import { Component, AfterContentInit, AfterViewInit, AfterContentChecked } from "@angular/core";
 import { TitleCasePipe } from '@angular/common';
 import { DatePipe } from '@angular/common';
-import { CustomPipePipe } from '../pipes/custom-pipe.pipe';
+import { CustomPipe } from './custom-pipe.pipe';
 
 @Component({
 
-    selector: "header-component",
+    selector: "pipes",
     template: `
     <h1>
         {{ time }}
-        {{ title | customPipe: [{id: 1}, {id:2}] }} 
-    </h1>`,
+        {{ title | customPipe: someArray }} 
+    </h1>
+    `,
 
     providers: [
         DatePipe,
+        CustomPipe
     ]
 })
-export class HeaderComponent implements AfterContentInit {
+export class PipeComponent implements AfterContentInit {
 
-    private title = "Angular Recipies";
+    private title = "el pipe";
     private time: string;
+
+    private someArray = [{id: 1}, {id:2}];
 
     constructor(private datePipe: DatePipe) {
     }
@@ -27,5 +31,4 @@ export class HeaderComponent implements AfterContentInit {
     ngAfterContentInit() {
         this.time = this.datePipe.transform(new Date(), "yyyy/MMM/dd");
     }
-
 }

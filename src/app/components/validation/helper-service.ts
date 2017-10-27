@@ -9,9 +9,9 @@ export class HelperService {
 
     validateOnServer(value: number) {
         if (value > 9000) {
-            return Observable.of({ isValid: true }).delay(1000)
+            return Observable.of({ isValid: true }).delay(500)
         } else {
-            return Observable.of({ isValid: false }).delay(1000)
+            return Observable.of({ isValid: false }).delay(2000)
         }
     }
 

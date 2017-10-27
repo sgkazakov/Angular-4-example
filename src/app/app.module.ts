@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadingStrategy, Route, PreloadAllModules } from "@angular/router"
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header.component';
-import { CustomPipePipe } from './pipes/custom-pipe.pipe';
 import { ViewChildComponent } from './components/view-content-child/view-child/view-child.component';
 import { ContentChildComponent } from './components/view-content-child/content-child/content-child.component';
 
@@ -29,9 +27,7 @@ export const ROUTES: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    CustomPipePipe
+    AppComponent
   ],
 
   providers: [CustomPreload],

@@ -11,28 +11,35 @@ import { AsyncValidators } from './async-validators';
 import { HelperService } from './helper-service';
 
 @Component({
-    selector: 'validation-recipe',
+    selector: 'validation',
     template: `
         <div>
             <h3> Presenter </h3>
             <input [formControl]="presenterNameControl" >
-            <div *ngIf="required()" style="color:red">
+            <div *ngIf="required()">
                 Presenter is required
             </div>
-            <div *ngIf="tooLong()" style="color:red">
+            <div *ngIf="tooLong()">
                 {{presenterNameControl.value}} is too long
             </div>
         </div>
         <div>
             <h3> Presenter Skillz </h3>
             <input [formControl]="presenterSkillsControl" type="number">
-            <div *ngIf="tooLowSkillz()" style="color:red">
-                Setting too low skillz, huh? <br> {{presenterNameControl.value}} skillz are over 9000
+            <div *ngIf="tooLowSkillz()">
+                Setting too low skillz, huh? <br> Bump them up a bit!!!
+            </div>
+            <div *ngIf="pending()">
+                Checking skillz, Shell network is so slow, *sight*
+            </div>
+            <div *ngIf="alright()">
+                {{presenterNameControl.value}} skillz are over 9000
             </div>
         </div>
-    `
+    `,
+    styles: ["div>div {color: red}"]
 })
-export class ValidationRecipeComponent {
+export class ValidationComponent {
 
     presenterNameControl: FormControl;
 
@@ -57,6 +64,14 @@ export class ValidationRecipeComponent {
     tooLowSkillz() {
         return this.presenterSkillsControl.value != '' &&
             this.presenterSkillsControl.hasError('noSkillz');
+    }
+
+    pending() {
+        return this.presenterSkillsControl.value && this.presenterSkillsControl.status === 'PENDING';
+    }
+
+    alright() {
+        return this.presenterSkillsControl.status === 'VALID';
     }
 
     validateValueOnServer(control: AbstractControl) {

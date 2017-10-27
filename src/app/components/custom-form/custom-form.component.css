@@ -1,0 +1,12 @@
+.rating {
+    
+    text-align: center;
+  }
+  
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 2em;
+  font-size: xx-large;
+  cursor: pointer;
+}

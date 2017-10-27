@@ -14,11 +14,17 @@ import { Subject } from "rxjs/Subject";
         <a routerLink="child" routerLinkActive="active">
             View Children
         </a>
-        <a routerLink="resolver/5" routerLinkActive="active">
-            Resolvers
+        <a routerLink="pipes" routerLinkActive="active">
+            Pipes
         </a>
         <a routerLink="validation" routerLinkActive="active">
             Validation
+        </a>
+        <a routerLink="host" routerLinkActive="active">
+            Rate us
+        </a>
+        <a routerLink="resolver/5" routerLinkActive="active">
+            Resolvers
         </a>
     </nav>
     <router-outlet></router-outlet>
