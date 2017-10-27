@@ -26,6 +26,9 @@ import { Subject } from "rxjs/Subject";
         <a routerLink="resolver/5" routerLinkActive="active">
             Resolvers
         </a>
+        <a routerLink="di-host" routerLinkActive="active">
+            Dependency Injection
+        </a>
     </nav>
     <router-outlet></router-outlet>
     `,

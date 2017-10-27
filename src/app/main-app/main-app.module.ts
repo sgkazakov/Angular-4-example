@@ -15,6 +15,8 @@ import { PipeComponent } from "../components/pipes/pipe.component";
 import { CustomPipe } from "../components/pipes/custom-pipe.pipe";
 import { HostComponent } from "../components/custom-form/host.component";
 import { CustomFormComponent } from "../components/custom-form/custom-form.component";
+import { DiModule } from "../components/di/di.module";
+import { DiHostComponent } from "../components/di/di.components";
 
 
 const ROUTES: Routes = [
@@ -37,12 +39,15 @@ const ROUTES: Routes = [
     {
         path: "host", component: HostComponent
             
+    }, {
+        path: "di-host", component: DiHostComponent
     }]
 @NgModule({
     imports: [
         CommonModule,
         FormsModule, ReactiveFormsModule,
-        RouterModule.forChild(ROUTES)
+        RouterModule.forChild(ROUTES),
+        DiModule
     ],
     declarations: [MainAppComponent,
         ParentComponent,
